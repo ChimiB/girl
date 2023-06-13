@@ -5,73 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "TU_APP_ID",
-    });
-  });
-</script>
 </head>
 <body>
     <button id="beso-button">Beso</button>
     <button id="abrazo-button">Abrazo</button>
     <button id="mimos-button">Mimos</button>
     <button id="dormidita-button">Dormidita</button>
-    <script src="java.js"></script>
-    <!DOCTYPE html>
-<html>
-<head>
-  <!-- Tus etiquetas meta, título y otros elementos de encabezado -->
 
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-  <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-      OneSignal.init({
-        appId: "TU_APP_ID",
-      });
-    });
-
-    function enviarNotificacion(mensaje) {
-      OneSignal.push(function() {
-        OneSignal.getUserId().then(function(userId) {
-          OneSignal.sendNotification(userId, {
-            headings: { en: "Nueva solicitud" },
-            contents: { en: "El usuario desea un/a " + mensaje },
-          });
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "TU_APP_ID",
+            });
         });
-      });
-    }
-  </script>
-</head>
-<body>
-  <!-- Contenido de tu página HTML -->
 
-  <button id="beso-button">Beso</button>
-  <button id="abrazo-button">Abrazo</button>
-  <button id="mimos-button">Mimos</button>
-  <button id="domidita-button">Domidita</button>
+        function enviarNotificacion(mensaje) {
+            OneSignal.push(function() {
+                OneSignal.getUserId().then(function(userId) {
+                    OneSignal.sendNotification(userId, {
+                        headings: { en: "Nueva solicitud" },
+                        contents: { en: "El usuario desea un/a " + mensaje },
+                    });
+                });
+            });
+        }
 
-  <script>
-    document.getElementById("beso-button").addEventListener("click", function() {
-      enviarNotificacion("Beso");
-    });
+        document.getElementById("beso-button").addEventListener("click", function() {
+            enviarNotificacion("Beso");
+        });
 
-    document.getElementById("abrazo-button").addEventListener("click", function() {
-      enviarNotificacion("Abrazo");
-    });
+        document.getElementById("abrazo-button").addEventListener("click", function() {
+            enviarNotificacion("Abrazo");
+        });
 
-    document.getElementById("mimos-button").addEventListener("click", function() {
-      enviarNotificacion("Mimos");
-    });
+        document.getElementById("mimos-button").addEventListener("click", function() {
+            enviarNotificacion("Mimos");
+        });
 
-    document.getElementById("domidita-button").addEventListener("click", function() {
-      enviarNotificacion("Domidita");
-    });
-  </script>
-</body>
-</html>
+        document.getElementById("dormidita-button").addEventListener("click", function() {
+            enviarNotificacion("Dormidita");
+        });
+    </script>
 </body>
 </html>
