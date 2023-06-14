@@ -24,12 +24,14 @@
             OneSignal.push(function() {
                 OneSignal.getUserId().then(function(userId) {
                     OneSignal.sendNotification(userId, {
-                        headings: { en: "Nueva solicitud" },
-                        contents: { en: "El usuario desea un/a " + mensaje },
+                        headings: { en: "Nuevo mensajito" },
+                        contents: { en: "La More quiere un/a " + mensaje },
                     });
                 });
             });
         }
+
+        // Mueve el bloque de código del evento de clic aquí, después de haber definido la función enviarNotificacion
 
         document.getElementById("beso-button").addEventListener("click", function() {
             enviarNotificacion("Beso");
